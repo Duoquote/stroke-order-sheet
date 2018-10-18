@@ -1,4 +1,4 @@
-![Make Me a Hanzi annotation tool](example.gif)
+I am so sleepy now I will edit the source later
 
 ### Chinese Character Stroke Order Sheet Generator
 
