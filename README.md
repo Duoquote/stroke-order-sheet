@@ -1,3 +1,5 @@
+![Chinese Stroke Order Sheet Generator Example Gif](example.gif)
+
 I am sorry if forking is not the way to publish my code but I am new here, I am trying to learn.
 
 ### Chinese Character Stroke Order Sheet Generator
