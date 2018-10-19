@@ -1,8 +1,16 @@
-I am so sleepy now I will edit the source later
+I am sorry if forking is not the way to publish my code but I am new here, I am trying to learn.
 
 ### Chinese Character Stroke Order Sheet Generator
 
-It is obviously self-explanatory, it creates, sheet, stroke orders, of hanzis you type.
+It is obviously self-explanatory, it creates stroke order sheets.
+
+### How to use it?
+
+You can just drag and drop the files to a web server but if you don't have a web server you can use XAMPP or something like that (I personally prefer WinNMP, It's better I guess).
+
+For path extractor, just run the python file, it will go through all svgs in svgs folder and create path.
+
+I feel like "Why am I explaining this?" but it's fun I think.
 
 ### Sources
 
