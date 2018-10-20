@@ -7,6 +7,10 @@ Twitter: @rich_clark
 */
 
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@font-face {
+    font-family: wenyue;
+    src: url(wenyue.otf);
+}
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -203,4 +207,8 @@ input.box-width-range {
 }
 path:nth-last-child(1) {
     fill: #c31596;
+}
+.hanzi-def {
+    font-size: 0.5cm;
+    font-family: 'Nunito', "wenyue", sans-serif;
 }
