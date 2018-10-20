@@ -16,7 +16,7 @@
 			<input type="button" class="generate" onclick="var chars = document.getElementById('generate-text');serialize(chars.value)" value="Generate">
 		</div>
 		<h2 class="header">Beta v1.1</h2>
-		<input type="range" min="1" max="100" value="50" class="box-width-range" id="box-width">
+		<input type="range" min="0" max="100" value="0" class="box-width-range" id="box-width">
 	</div>
 
 	<div id="page">
@@ -25,6 +25,23 @@
 	<script type="text/javascript">
 		if (!localStorage["svg"]) {
 			localStorage.setItem("svg", '<svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="hanzi-svg"><g stroke="#c1c1c1" stroke-dasharray="3" stroke-width="3" transform="scale(4, 4)"><line x1="0" y1="0" x2="256" y2="256"></line><line x1="256" y1="0" x2="0" y2="256"></line><line x1="128" y1="0" x2="128" y2="256"></line><line x1="0" y1="128" x2="256" y2="128"></line></g><g transform="scale(1, -1) translate(0, -900)"></g></svg>')
+		}
+		if (!localStorage["hanzi-9573"]) {
+			var resp = [];
+			const Http = new XMLHttpRequest();
+			const url='./dictionary.json';
+			Http.open("GET", url);
+			Http.responseType = 'json';
+			Http.send();
+			Http.onreadystatechange=(e)=>{
+				if (Http.readyState == 4 && Http.status == 200) {
+					resp = Http.response;
+					for (var i = 0; i < resp.length; i++) {
+						localStorage.setItem(charId(resp[i]["character"]), JSON.stringify(resp[i]));
+					}
+					console.log("Dictionary set")
+				}
+			}
 		}
 		function saveDoc() {
 			html2canvas(document.getElementById("page")).then(function(canvas) {
@@ -68,12 +85,17 @@
 			}
 			var first = document.createElement("div");
 			var mainHanzi = document.getElementById(hanzi+"-0");
+			var hanziDef = document.createElement("div");
+			hanziDef.className = "hanzi-def";
+			hanziDef.id = "hanzi-def-"+hanzi;
+			hanziDef.innerHTML = JSON.parse(localStorage[hanzi])["character"]+"&#9;"+JSON.parse(localStorage[hanzi])["pinyin"][0];
 			first.className = "hanzi-box full-hanzi";
 			first.id = hanzi+"-full";
 			first.innerHTML = localStorage["svg"];
 			first.firstChild.childNodes[1].innerHTML = currentBox;
 			var last = first.cloneNode(true);
 			last.className = "hanzi-box last-hanzi";
+			mainHanzi.parentNode.insertBefore(hanziDef, mainHanzi);
 			mainHanzi.parentNode.insertBefore(first, mainHanzi);
 			mainHanzi.parentNode.appendChild(last);
 		}
