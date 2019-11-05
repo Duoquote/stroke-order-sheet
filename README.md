@@ -21,11 +21,7 @@ I feel like "Why am I explaining this?" but it's fun I think.
 - I didn't add the font I use for hanzis because got it from chinese website thus I can't read Terms of Usage or things like that, if you want to include it download from there [WenYue-FangTangTi-NC-2.otf](http://www.fonts.net.cn/font-35965663380.html) and rename it wenyue.otf.
 
 ### TODOs
-
-[ ] Add definitions and pinyins of hanzis.
-
-[ ] Modify CSS for mobile environment so that next TODO can be done.
-
-[ ] Add integration for cordova.
-
-[ ] Add save as PDF or something like that for printing.
+- [ ] Add definitions and pinyins of hanzis.
+- [ ] Modify CSS for mobile environment so that next TODO can be done.
+- [ ] Add integration for cordova.
+- [ ] Add save as PDF or something like that for printing.
